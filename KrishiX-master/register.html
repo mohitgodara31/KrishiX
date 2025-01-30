@@ -1,0 +1,219 @@
+<!-- <!DOCTYPE HTML>
+<html lang="en">
+<html>
+
+<head>
+  <title>Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="login_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+</head>
+
+<body class="body">
+
+
+
+  <div class="login-page">
+    <div class="form">
+
+      <form>
+        <lottie-player
+          src="https://assets4.lottiefiles.com/datafiles/XRVoUu3IX4sGWtiC3MPpFnJvZNq7lVWDCa8LSqgS/profile.json"
+          background="transparent" speed="1" style="justify-content: center;" loop autoplay></lottie-player>
+        <input type="text" placeholder="&#xf007;  Adhaar card" />
+        <input type="password" id="kcc number" placeholder="&#xf023;  KCC Number" />
+        <input type="password" id="mobile number" placeholder="&#xf023;  Mobile Number" />
+        <input type="password" id="password" placeholder="&#xf023;  Password" />
+        <i class="fas fa-eye" onclick="show()"></i>
+        <br>
+        <br>
+        <a href="registerreply.html" style="text-decoration: none; color: white;">Register</a>
+        <p class="message"></p>
+      </form>
+
+
+    </div>
+  </div>
+
+  <script>
+    function show() {
+      var password = document.getElementById("password");
+      var icon = document.querySelector(".fas")
+
+      // ========== Checking type of password ===========
+      if (password.type === "password") {
+        password.type = "text";
+      }
+      else {
+        password.type = "password";
+      }
+    };
+  </script>
+</body>
+
+</html> -->
+
+
+<!-- <!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <title>Register</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="login_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+</head>
+
+<body class="body">
+  <div class="login-page">
+    <div class="form">
+
+      <form id="registerForm" action="/register" method ="POST" onsubmit="registerUser(event)">
+        <h1 style="color:white ;font-weight: bold;  text-shadow: 2px 2px" >Register</h1>
+        <input type="text" id="aadhaar" placeholder="&#xf007;  Aadhaar card" required />
+        <input type="password" id="password" placeholder="&#xf023;  password" required />
+        <<input type="password" id="confirmPassword" placeholder="&#xf023; Confirm password" required /> -->
+        <!-- <br><br>
+        <button type="submit">Register</button>
+        <p id="error" class="message" style="color:red;"></p>
+      </form>
+
+    </div>
+  </div> --> 
+
+  <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Page</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #eef2f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .register-container {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      width: 300px;
+      background: #ff9933;
+    }
+
+    h1 {
+      font-size: 24px;
+      margin-bottom: 20px;
+      color: #333;
+      font-weight: bold;
+      color: #006400;
+      text-align: center;
+    }
+
+    label {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    .error {
+      color: red;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="register-container">
+    <h1>Register with KrishiX</h1>
+    <form action="/register" method="POST">
+      <label for="aadhaar">Aadhaar Number</label>
+      <input type="text" id="aadhaar" name="aadhaar" placeholder="Enter your Aadhaar number" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+      <button type="submit">Register</button>
+    </form>
+  </div>
+</body>
+</html>
+
+
+  <!-- <script>
+    // Function to register a user
+    function registerUser(event) {
+      event.preventDefault(); // Prevent form submission
+
+      const aadhaar = document.getElementById('aadhaar').value;
+      const password = document.getElementById('password').value;
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      const errorElement = document.getElementById('error');
+
+      // Clear previous error message
+      errorElement.textContent = '';
+
+      // Check if the Aadhaar is already registered
+      let users = JSON.parse(localStorage.getItem('users')) || [];
+      if (users.some(user => user.aadhaar === aadhaar)) {
+        errorElement.textContent = 'Aadhaar already registered.';
+        return;
+      }
+
+      // Check if the passwords match
+      if (password !== confirmPassword) {
+        errorElement.textContent = 'Passwords do not match.';
+        return;
+      }
+
+      // Create a new user and store it in localStorage
+      const newUser = { aadhaar, password };
+      users.push(newUser);
+      localStorage.setItem('users', JSON.stringify(users));
+
+      // Redirect to login page after successful registration
+      alert('Registration successful! Please login.');
+      window.location.href = 'login.html'; // Redirect to login page
+    }
+  </script> -->
+</body>
+
+</html>

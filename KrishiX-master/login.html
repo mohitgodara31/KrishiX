@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<html>
+
+<head>
+  <title>Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="login_style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+    integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+</head>
+
+<body class="body">
+
+  <div class="login-page">
+    <div class="form">
+
+      <form id="loginForm">
+        <lottie-player
+          src="https://assets4.lottiefiles.com/datafiles/XRVoUu3IX4sGWtiC3MPpFnJvZNq7lVWDCa8LSqgS/profile.json"
+          background="transparent" speed="1" style="justify-content: center;" loop autoplay></lottie-player>
+        <input type="number" id="aadhaar" placeholder="&#xf007;  Aadhaar card" required />
+        <input type="password" id="password" placeholder="&#xf023;  password" required />
+        <i class="fas fa-eye" onclick="show()"></i>
+        <br>
+        <br>
+        <button type="button" onclick="validateLogin()">Login</button>
+        <p id="error" class="message" style="color:red;"></p>
+      </form>
+
+    </div>
+  </div>
+
+  <script>
+
+    // Function to toggle password visibility
+    function show() {
+      var password = document.getElementById("password");
+      var icon = document.querySelector(".fas");
+
+      // Toggle between text and password type
+      if (password.type === "password") {
+        password.type = "text";
+      } else {
+        password.type = "password";
+      }
+    }
+
+    // Function to validate Aadhaar and Password
+    function validateLogin() {
+      const aadhaar = document.getElementById('aadhaar').value;
+      const password = document.getElementById('password').value;
+      const errorElement = document.getElementById('error');
+
+      // Your correct Aadhaar and Password values (set these)
+      const correctAadhaar = '123456789012'; // Replace with the valid Aadhaar number
+      const correctPassword = 'password'; // Replace with the valid password
+
+      // Clear any previous error message
+      errorElement.textContent = '';
+
+      // Aadhaar and password validation
+      if (aadhaar === correctAadhaar && password === correctPassword) {
+        // Redirect to another page if valid
+        window.location.href = 'manoj.html';
+      } else {
+        // Show error message if invalid
+        errorElement.textContent = 'Invalid Aadhaar or password. Please try again.';
+      }
+    }
+  </script>
+</body>
+
+</html>
